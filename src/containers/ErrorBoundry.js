@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-
-
 class ErrorBoundry extends Component{  //helps us handle error that occurs within our component so that we can report/correct well
 
     constructor(props){

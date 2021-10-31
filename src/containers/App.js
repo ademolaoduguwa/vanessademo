@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import CardList from '../components/CardList';
 import './App.css';
-import {robots} from '../Robots';
-import Searchbox from '../components/Searchbox';
+// import {robots} from '../Robots';
 import Scroll from '../components/Scroll';
 import ErrorBoundry from './ErrorBoundry';
+import Wisdombox from '../components/Wisdombox';
+import Username from '../components/Username';
+import Userimg from '../components/Userimg';
+import WisdomList from '../components/WisdomList';
+import userDetail from '../components/userDetail';
+import roll from '../roll';
+import rollss from '../rollss';
+import Scrollhor from '../components/Scrollhor';
+
 
 
 class  App extends Component {
@@ -14,17 +21,23 @@ class  App extends Component {
     super ()
 
     this.state = {
-      robots: [],
-      searchfield: '',
       inputvalue: '',
-      // filteredRobo: robots,
+      rolls:roll,
+      rolld:rollss,
+      Userdetails:userDetail,
+      wisdomField:'hello to you',
+      searchfield:'',
+      theFriends:[],
+      request:[],
+
       
     }
     console.log('constructor');
+    
   }
 
  
- componentDidMount () {
+ componentDidMount () { //fetch both user and rolls here from pydb using urls ; then update themon component will update
    fetch('https://jsonplaceholder.typicode.com/users')
    .then(response => response.json() )
    .then(data => {console.log(data); })//this.setState({robots:data});
@@ -33,43 +46,76 @@ class  App extends Component {
  }
 
  componentWillMount(){
-   console.log('component-Will-Mount');
-   this.setState({robots:robots});
+  //  console.log('component-Will-Mount');
+  //  this.setState({robots:robots});
  }
 
  onSearchChange = (event) => {
+    this.setState({searchfield:event.target.value});
+       
 
-    //  this.setState({inputvalue:event.target.value}); //change/update the values in the state
-     
-     this.setState({searchfield:event.target.value});
+  }
+  
+  
+  onWisdomInput = (event) => { //on button click
+    console.log('event happened');
+    let textvalue = document.getElementById('textareaok');
+    console.log(textvalue.value);
+    this.setState({wisdomField:textvalue.value}); //capture input in box
+    this.setState({rolls:this.state.rolls.push({info:textvalue.value})}); //add to the rolls
+    this.setState({rolld:this.state.rollss}); //add to the rollss
+    console.log('our value ' + this.state.wisdomField);
+    console.log('rolld ' + this.state.rolld);
+    console.log('rollss ' + this.state.rolls);
+    
+    
+  }
 
-    //  console.log(this.state.inputvalue);
-    //  const filteredRobots = this.state.robots.filter((robot) =>{
-    //    return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase()); //filter the robot based on the value typed in the inputfield
-    //  })
-    //  this.setState({filteredRobo:filteredRobots});
-         
- }
+  // componentWillUpdate(){
+  //   const val1 = this.state.rolld
+  //   const val2 = this.state.rolls
+  // }
 
  render (){
 
-  if (this.state.robots.length === 0){ return (<h1>Loading app...</h1>);}
+    // const val1 = this.state.rolld
+    // const val2 = this.state.rolls
+   
+  //   console.log("lets see " + this.state.val1)
+  //   console.log("lets see " + this.state.val2)
+
+  // {console.log("first b4 one look ok " + val1)
+  // console.log("second b4 one look ok" + val2)}
+
+  if (0){ return (<h1>Loading app...</h1>);}
   else{
-    console.log('render');
+    // console.log('rendering');
   
-    const filteredRobots = this.state.robots.filter((robot) => {
-    return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase()); //filter the robot based on the value typed in the inputfield
-    });
+    // const filteredRobots = this.state.robots.filter((robot) => {
+    // return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase()); //filter the robot based on the value typed in the inputfield
+    // });
   
     return (
+
+      // console.log("first one look " + this.state.rolld),
+      // console.log("second one look " + this.state.rolls),
+
+      // console.log("first one look ok " + val1),
+      // console.log("second one look ok" + val2),
      
-        <div className ='tc'>
-          <h1 className='f1'>RoboFriends</h1>
-          <Searchbox searchChange = {this.onSearchChange} /*value ={this.state.inputvalue}*//>
+       <div className ='tc'>
+         {/* {console.log("first one " + this.state.rolld),
+         console.log("second one " + this.state.rolls)} */}
+          <Userimg imgsrc = {this.state.Userdetails}/><br/>
+          <Username name={this.state.Userdetails}/>
+          <Wisdombox dropWisdom ={this.onWisdomInput} />
+          {/* <Scrollhor>
+          <WisdomList wisdom={this.state.rolld}/>
+          </Scrollhor> */}
           <Scroll>
-            <ErrorBoundry>
-              <CardList robots={filteredRobots}/>
-            </ErrorBoundry>  
+            {/* <ErrorBoundry> */}
+              <WisdomList wisdom={this.state.rolls}/>
+            {/* </ErrorBoundry>   */}
           </Scroll>
         </div>
          

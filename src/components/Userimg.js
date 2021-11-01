@@ -8,7 +8,7 @@ const Userimg = ({imgsrc}) => { //destructuring
 
     return (
         <div className =''>
-        <img src='../components/Profile.png' alt ='' width='150px' height='150px'/> 
+        <img src='https://avatars.githubusercontent.com/u/93008659?v=4' alt ='' width='150px' height='150px'/> 
         {/* src={imgsrc.imgurl} */}
         </div> 
     );

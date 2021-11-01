@@ -60,7 +60,8 @@ class  App extends Component {
   onWisdomInput = (event) => { //on button click
     console.log('event happened');
     let textvalue = document.getElementById('textareaok');
-    if(textvalue != ''){
+    // console.log('textvalue is' + textvalue);
+    if(textvalue.value !=''){
     console.log(textvalue.value);
     this.setState({wisdomField:textvalue.value}); //capture input in box
     this.setState({rolls:[...this.state.rolls, {info:textvalue.value}]}); //add to the rolls

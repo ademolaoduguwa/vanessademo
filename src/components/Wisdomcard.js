@@ -7,7 +7,7 @@ import React from 'react';
 const Wisdomcard = ({data}) => { //destructuring
 
     return (
-        <div className ='tc bg-black dib pa3 ma3 bw5 shadow-5 br4 mw5'>
+        <div className ='tc near-black bg-light-silver pa3 ma3 bw5 shadow-5 br4 mw5'>
            <div>
                 <p className ='fw1 f6 lh-copy mw5 '>{data}</p>
             </div>

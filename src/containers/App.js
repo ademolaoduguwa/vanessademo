@@ -62,13 +62,13 @@ class  App extends Component {
     let textvalue = document.getElementById('textareaok');
     console.log(textvalue.value);
     this.setState({wisdomField:textvalue.value}); //capture input in box
-    this.setState({rolls:this.state.rolls.push({info:textvalue.value})}); //add to the rolls
-    this.setState({rolld:this.state.rollss}); //add to the rollss
+    this.setState({rolls:[...this.state.rolls, {info:textvalue.value}]}); //add to the rolls
+    this.setState({rolld:[...this.state.rolls, rollss]}); //add to the rollss
     console.log('our value ' + this.state.wisdomField);
     console.log('rolld ' + this.state.rolld);
     console.log('rollss ' + this.state.rolls);
-    
-    
+    document.getElementById('textareaok').value='';
+        
   }
 
   // componentWillUpdate(){
@@ -78,15 +78,7 @@ class  App extends Component {
 
  render (){
 
-    // const val1 = this.state.rolld
-    // const val2 = this.state.rolls
-   
-  //   console.log("lets see " + this.state.val1)
-  //   console.log("lets see " + this.state.val2)
-
-  // {console.log("first b4 one look ok " + val1)
-  // console.log("second b4 one look ok" + val2)}
-
+  
   if (0){ return (<h1>Loading app...</h1>);}
   else{
     // console.log('rendering');
@@ -97,8 +89,8 @@ class  App extends Component {
   
     return (
 
-      // console.log("first one look " + this.state.rolld),
-      // console.log("second one look " + this.state.rolls),
+       console.log("first one look " + this.state.rolld),
+       console.log("second one look " + this.state.rolls),
 
       // console.log("first one look ok " + val1),
       // console.log("second one look ok" + val2),

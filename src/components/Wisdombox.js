@@ -6,7 +6,7 @@ const Wisdombox = ({dropWisdom}) => {
     return (
         <div  className=''>
             <textarea id="textareaok"
-            className='pa2 georgia ba b--green bg-lightest-blue' 
+            className='pa2 georgia ba b--green bg-white' 
             placeholder="what do you know ?" 
             type='input' 
             style= {{width:400}}

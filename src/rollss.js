@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 const rollss = [
     {
       info:"you are cool"  

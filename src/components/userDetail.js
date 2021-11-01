@@ -1,24 +1,22 @@
-import React from 'react'
-
 const userDetail = [
     {
         username: "people",
-        firstname: "femi",
-        lastname: "bukky",
+        firstname: "Vanessa",
+        lastname: "Vanessa",
         imgurl:"",
 
     },
     {
         username: "people",
-        firstname: "femi",
-        lastname: "bukky",
+        firstname: "Vanessa",
+        lastname: "Vanessa",
         imgurl:"",
 
     },
     {
         username: "people",
-        firstname: "femi",
-        lastname: "bukky",
+        firstname: "Vanessa",
+        lastname: "Vanessa",
         imgurl:"",
 
     }

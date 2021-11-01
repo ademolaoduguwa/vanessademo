@@ -1,5 +1,4 @@
 import React from 'react';
-import Prolife from '../components/Profile.png';
 
 
 // Userer image component 

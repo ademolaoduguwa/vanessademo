@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import {robots} from '../Robots';
 import Scroll from '../components/Scroll';
-import ErrorBoundry from './ErrorBoundry';
+// import ErrorBoundry from './ErrorBoundry';
 import Wisdombox from '../components/Wisdombox';
 import Username from '../components/Username';
 import Userimg from '../components/Userimg';
@@ -10,7 +10,7 @@ import WisdomList from '../components/WisdomList';
 import userDetail from '../components/userDetail';
 import roll from '../roll';
 import rollss from '../rollss';
-import Scrollhor from '../components/Scrollhor';
+// import Scrollhor from '../components/Scrollhor';
 
 
 
@@ -45,10 +45,10 @@ class  App extends Component {
   
  }
 
- componentWillMount(){
-  //  console.log('component-Will-Mount');
-  //  this.setState({robots:robots});
- }
+//  componentWillMount(){
+//   //  console.log('component-Will-Mount');
+//   //  this.setState({robots:robots});
+//  }
 
  onSearchChange = (event) => {
     this.setState({searchfield:event.target.value});
@@ -61,7 +61,7 @@ class  App extends Component {
     console.log('event happened');
     let textvalue = document.getElementById('textareaok');
     // console.log('textvalue is' + textvalue);
-    if(textvalue.value !=''){
+    if(textvalue.value !==''){
     console.log(textvalue.value);
     this.setState({wisdomField:textvalue.value}); //capture input in box
     this.setState({rolls:[...this.state.rolls, {info:textvalue.value}]}); //add to the rolls

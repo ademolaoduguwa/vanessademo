@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 const roll = [
     // {
     //   info:"you are cool"  

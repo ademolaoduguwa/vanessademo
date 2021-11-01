@@ -64,8 +64,8 @@ class  App extends Component {
     if(textvalue.value !==''){
     console.log(textvalue.value);
     this.setState({wisdomField:textvalue.value}); //capture input in box
-    this.setState({rolls:[...this.state.rolls, {info:textvalue.value}]}); //add to the rolls
-    this.setState({rolld:[...this.state.rolls, rollss]}); //add to the rollss
+    this.setState({rolls:[...this.state.rolls, {info:textvalue.value}].reverse()}); //add to the rolls
+    this.setState({rolld:[...this.state.rolls, rollss].reverse()}); //add to the rollss
     console.log('our value ' + this.state.wisdomField);
     console.log('rolld ' + this.state.rolld);
     console.log('rollss ' + this.state.rolls);

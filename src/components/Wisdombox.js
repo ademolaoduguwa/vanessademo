@@ -10,7 +10,7 @@ const Wisdombox = ({dropWisdom}) => {
             type='input' 
             style= {{width:400}}
             height ='90%'
-            placeholder="Share anything you'd like people to know about ?"
+            placeholder="Share anything you'd like people to know about and learn from, whether its fiction, a story or a fact ?"
             ></textarea>
             <div></div>
             <div>

@@ -10,11 +10,11 @@ const Wisdombox = ({dropWisdom}) => {
             type='input' 
             style= {{width:400}}
             height ='90%'
-            placeholder="What would you like to teach people today ?"
+            placeholder="Tell people anything you'd like them to know about ?"
             ></textarea>
             <div></div>
             <div>
-                <button onClick={dropWisdom}>Post Lesson</button>
+                <button onClick={dropWisdom}>Tell the world</button>
             </div>
             {/* <p>{`${value} looks good `}</p> */}
         </div>

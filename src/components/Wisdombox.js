@@ -14,7 +14,7 @@ const Wisdombox = ({dropWisdom}) => {
             ></textarea>
             <div></div>
             <div>
-                <button onClick={dropWisdom}>Share!</button>
+                <button onClick={dropWisdom}>Increase the World's Knowledge!</button>
             </div>
             {/* <p>{`${value} looks good `}</p> */}
         </div>

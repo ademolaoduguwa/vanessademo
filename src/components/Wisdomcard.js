@@ -12,7 +12,7 @@ const Wisdomcard = ({data}) => { //destructuring
                 <p className ='fw1 f6 lh-copy mw5 '>{data}</p>
             </div>
             <div>
-                <button className="pa1 ma1">{'subscribe'}</button>
+                <button className="pa1 ma1">{'stc'}</button>
             </div>
             <div>
                 <button className="pa1 ma1">{'Great'}</button>

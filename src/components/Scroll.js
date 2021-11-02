@@ -5,7 +5,7 @@ const Scroll = ( (props) => {  // A react functionaity component that wraps anot
 
     return(
         //another way to apply css style and object contaning the css in a javascript tag.
-        <div style ={{ overflowY:'scroll', border:'0px solid black', margin:'15px', padding:'20px', height:'400px'}}> 
+        <div style ={{ overflowY:'scroll', border:'1px solid black', margin:'15px', padding:'20px', height:'400px'}}> 
 
             {props.children}
 

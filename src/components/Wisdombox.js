@@ -10,11 +10,11 @@ const Wisdombox = ({dropWisdom}) => {
             type='input' 
             style= {{width:400}}
             height ='90%'
-            placeholder="Share anything you'd like people to know about and learn from, whether it's fiction, a story or a fact "
+            placeholder="Share anything you'd like people to know about and learn from, whether it's fiction, a story or a fact"
             ></textarea>
             <div></div>
             <div>
-                <button onClick={dropWisdom}>Increase the World's Knowledge !</button>
+                <button onClick={dropWisdom}>Share!</button>
             </div>
             {/* <p>{`${value} looks good `}</p> */}
         </div>

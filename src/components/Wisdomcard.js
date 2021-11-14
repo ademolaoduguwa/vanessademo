@@ -4,21 +4,22 @@ import React from 'react';
 // const Card = (props) => {
 // const {name, email, id} = props  
 
-const Wisdomcard = ({data}) => { //destructuring
+const Wisdomcard = ({data, name, imgid}) => { //destructuring
 
     return (
-        <div className ='tc near-black bg-light-gray dib pa3 ma3 bw5 shadow-5 br4 mw5'>
-           <div>
-                <p className ='fw1 f6 lh-copy mw5 '>{data}</p>
-            </div>
-            <div>
-                <button className="pa1 ma1">{'stc'}</button>
-            </div>
-            <div>
-                <button className="pa1 ma1">{'Great'}</button>
-            </div>
+        <div className ='tc dib  ma3 bw5 br4'>
+             <article class="mw5 center bg-white br3 pa3 shadow-5 pa4-ns mv3 ba b--black-10">
+                <div class="tc">
+                    <img src={imgid} class="br-100 h4 w4 dib ba b--black-05 pa2" alt="cool" title="Photo of a kitty staring at you"/>       
+                    <h1 class="f4">{name}</h1>
+                    <hr class="mw3 bb bw1 b--black-10"/>
+                </div>
+                <div>
+                <p class="lh-copy measure center f6 black-70"> {data} </p>
+                </div>
+            </article>
         </div>
+        
     );
 }
-
 export default Wisdomcard;

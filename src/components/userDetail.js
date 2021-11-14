@@ -1,9 +1,9 @@
 const userDetail = [
     {
-        username: "people",
-        firstname: "Vanessa",
-        lastname: "Vanessa",
-        imgurl:"",
+        username: "ademola.oduguwa",
+        firstname: "Ademola",
+        lastname: "Oduguwa",
+        imgurl:"http://tachyons.io/img/avatar_1.jpg",
 
     },
     {

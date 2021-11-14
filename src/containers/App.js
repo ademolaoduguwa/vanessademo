@@ -10,6 +10,11 @@ import WisdomList from '../components/WisdomList';
 import userDetail from '../components/userDetail';
 import roll from '../roll';
 import rollss from '../rollss';
+import Signin from '../components/Signin';
+import Signup from '../components/Signup';
+import Signinnav from '../components/Signinnav';
+import Profilecard from '../components/Profilecard';
+
 // import Scrollhor from '../components/Scrollhor';
 
 
@@ -29,6 +34,8 @@ class  App extends Component {
       searchfield:'',
       theFriends:[],
       request:[],
+      pages:'signin',
+      navdata:[" ",'SignIn','SignUp','Sign Out','About'],
 
       
     }
@@ -55,16 +62,32 @@ class  App extends Component {
        
 
   }
+
+  onSignUp = (event) => {
+    this.setState({pages:'signup'});
+       
+
+  }
+
+  onSignIn = (event) => {
+    this.setState({pages:'home'});
+       
+
+  }
+
+  onSignOut = (event) => {
+    this.setState({pages:'about'});
+    
+  }
   
-  
-  onWisdomInput = (event) => { //on button click
+    onWisdomInput = (event) => { //on button click
     console.log('event happened');
     let textvalue = document.getElementById('textareaok');
     // console.log('textvalue is' + textvalue);
     if(textvalue.value !==''){
     console.log(textvalue.value);
     this.setState({wisdomField:textvalue.value}); //capture input in box
-    this.setState({rolls:[...this.state.rolls, {info:textvalue.value}].reverse()}); //add to the rolls
+    this.setState({rolls:[...this.state.rolls, {info:textvalue.value, imgurl:this.state.Userdetails[0].imgurl, firstname:this.state.Userdetails[0].firstname}].reverse()}); //add to the rolls
     this.setState({rolld:[...this.state.rolls, rollss].reverse()}); //add to the rollss
     console.log('our value ' + this.state.wisdomField);
     console.log('rolld ' + this.state.rolld);
@@ -91,19 +114,53 @@ class  App extends Component {
     // const filteredRobots = this.state.robots.filter((robot) => {
     // return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase()); //filter the robot based on the value typed in the inputfield
     // });
-  
-    return (
 
-       console.log("first one look " + this.state.rolld),
-       console.log("second one look " + this.state.rolls),
+    let usermessage ='';
+    let navmessage ='';
 
-      // console.log("first one look ok " + val1),
-      // console.log("second one look ok" + val2),
-     
-       <div className ='tc'>
-         {/* {console.log("first one " + this.state.rolld),
-         console.log("second one " + this.state.rolls)} */}
-          <Userimg imgsrc = {this.state.Userdetails}/><br/>
+        if (this.state.pages === 'signin') {
+          navmessage=(
+            <div>
+                <Signinnav actions={[this.onSignUp, this.onSignIn, this.onSignOut]} data={this.state.navdata} page={this.state.pages}/> 
+            </div>
+          )
+            usermessage = (
+              <div>
+                <Userimg imgsrc = {this.state.Userdetails}/><br/>
+                <h1>Welcome to Vanessa</h1>
+                <Signin actions ={[this.onSignUp, this.onSignIn]}/>
+              </div>     
+
+            )
+        }
+
+        else if (this.state.pages === 'signup'){
+          navmessage=(
+            <div>
+                <Signinnav actions={[this.onSignUp, this.onSignIn, this.onSignOut]} data={this.state.navdata} page={this.state.pages}/> 
+            </div>
+          )
+          usermessage = (
+            <div>
+              <Userimg imgsrc = {this.state.Userdetails}/><br/>
+              <h1>Welcome to Vanessa</h1>
+                <Signup actions ={[this.onSignUp, this.onSignIn]}/>
+              </div>
+
+          )
+        }
+
+        else if (this.state.pages === 'home'){
+            navmessage=(
+              <div>
+                  
+                  <Signinnav actions={[this.onSignUp, this.onSignIn, this.onSignOut]} data={this.state.navdata} page={this.state.pages}/> 
+              </div>
+              
+            )
+          usermessage = (
+            <div>
+           <Profilecard name={this.state.Userdetails[0].firstname} imgid={this.state.Userdetails[0].imgurl} email={this.state.Userdetails[0].username} />
           <Username name={this.state.Userdetails}/>
           <Wisdombox dropWisdom ={this.onWisdomInput} />
           {/* <Scrollhor>
@@ -111,10 +168,40 @@ class  App extends Component {
           </Scrollhor> */}
           <Scroll>
             {/* <ErrorBoundry> */}
-              <WisdomList wisdom={this.state.rolls}/>
+              <WisdomList wisdom={this.state.rolls} userdetails={this.state.Userdetails}/>
             {/* </ErrorBoundry>   */}
           </Scroll>
+            </div>
+
+          )
+        }
+
+        else if (this.state.pages === 'about'){
+          usermessage = (
+            <div>
+              {window.location.href = "https://onvanessa.com"}
+            </div>
+          )
+        }
+  
+    return (
+      //  console.log("first one look " + this.state.rolld),
+      //  console.log("second one look " + this.state.rolls),
+
+            // console.log("first one look ok " + val1),
+      // console.log("second one look ok" + val2),
+
+        
+     
+       <div className ='tc'>
+         {/* {console.log("first one " + this.state.rolld),
+         console.log("second one " + this.state.rolls)} */}
+          {navmessage}
+         {usermessage}
+                  
         </div>
+
+          
          
     );
 

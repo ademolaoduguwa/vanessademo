@@ -10,7 +10,7 @@ const Username = ({name}) => { //destructuring
     return (
         <div className =''>
             <div>
-                <h1 className =''>{ 'welcome to ' + name[0].firstname.toUpperCase() }</h1>
+                <h5 className =''>{name[0].firstname.toLowerCase() + ', youre welcome to vanessa' }</h5>
           </div>
         </div>
     );

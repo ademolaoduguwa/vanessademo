@@ -1,0 +1,10 @@
+[1112/043341.139:ERROR:process_reader_win.cc(127)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1112/043341.139:ERROR:process_reader_win.cc(127)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1112/043341.327:ERROR:exception_snapshot_win.cc(100)] thread ID 15924 not found in process
+[1112/043341.327:ERROR:exception_snapshot_win.cc(100)] thread ID 9412 not found in process
+[1112/043341.327:ERROR:process_memory_win.cc(73)] ReadMemory at 0xfa6f9fee70 of 16 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1112/043341.327:ERROR:exception_snapshot_win.cc(211)] EXCEPTION_POINTERS read failed
+[1112/043341.327:ERROR:process_memory_win.cc(73)] ReadMemory at 0xef27fed00 of 16 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[1112/043341.327:ERROR:exception_snapshot_win.cc(211)] EXCEPTION_POINTERS read failed
+[1112/043341.327:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[1112/043341.327:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)

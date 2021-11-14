@@ -13,10 +13,9 @@ const Wisdomcard = ({data, name, imgid}) => { //destructuring
                     <img src={imgid} class="br-100 h4 w4 dib ba b--black-05 pa2" alt="cool" title="Photo of a kitty staring at you"/>       
                     <h1 class="f4">{name}</h1>
                     <hr class="mw3 bb bw1 b--black-10"/>
+                    <p class="fw4 f5 1h-copy">{data}</p>
                 </div>
-                <div>
-                <p class="lh-copy measure center f6 black-70"> {data} </p>
-                </div>
+                
             </article>
         </div>
         

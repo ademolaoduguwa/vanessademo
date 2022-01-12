@@ -108,12 +108,21 @@ class  App extends Component {
   // }
 
   handleImageUpload = () => {
-    // get the first input element with the type of file,
-    const imageFile = document.querySelector('input[type="file"]')
-    // destructure the files array from the resulting object
-    const files = imageFile.files
-    // log the result to the console
-    console.log('Image file', files[0])
+    const { files } = document.querySelector('input[type="file"]')
+    const formData = new FormData();
+    formData.append('file', files[0]);
+  // replace this with your upload preset name
+    formData.append('upload_preset', 'drp9dgez');
+    const options = {
+    method: 'POST',
+    body: formData,
+    };
+
+  // replace cloudname with your Cloudinary cloud_name
+    return fetch('https://api.Cloudinary.com/v1_1/:vanessaproduct/image/upload', options)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
   }
   // componentWillUpdate(){
   //   const val1 = this.state.rolld

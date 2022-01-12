@@ -14,6 +14,7 @@ import Signin from '../components/Signin';
 import Signup from '../components/Signup';
 import Signinnav from '../components/Signinnav';
 import Profilecard from '../components/Profilecard';
+import Wisdomboxmedia from '../components/Wisdomboxmedia';
 
 // import Scrollhor from '../components/Scrollhor';
 
@@ -36,6 +37,8 @@ class  App extends Component {
       request:[],
       pages:'signin',
       navdata:[" ",'SignIn','SignUp','Sign Out','About'],
+      imageUrl: null,
+      imageAlt: null,
 
       
     }
@@ -99,6 +102,19 @@ class  App extends Component {
         
   }
 
+  // handleImageUpload = () => {
+  //   const { files } = document.querySelector('input[type="file"]')
+  //   console.log('Image file', files[0])
+  // }
+
+  handleImageUpload = () => {
+    // get the first input element with the type of file,
+    const imageFile = document.querySelector('input[type="file"]')
+    // destructure the files array from the resulting object
+    const files = imageFile.files
+    // log the result to the console
+    console.log('Image file', files[0])
+  }
   // componentWillUpdate(){
   //   const val1 = this.state.rolld
   //   const val2 = this.state.rolls
@@ -163,6 +179,7 @@ class  App extends Component {
            <Profilecard name={this.state.Userdetails[0].firstname} imgid={this.state.Userdetails[0].imgurl} email={this.state.Userdetails[0].username} />
           <Username name={this.state.Userdetails}/>
           <Wisdombox dropWisdom ={this.onWisdomInput} />
+          <Wisdomboxmedia handleTheImageUpload ={this.handleImageUpload} />
           {/* <Scrollhor>
           <WisdomList wisdom={this.state.rolld}/>
           </Scrollhor> */}

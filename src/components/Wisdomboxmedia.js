@@ -12,19 +12,19 @@ const Wisdomboxmedia = ({handleTheImageUpload}) => {
             height ='90%'
             placeholder="Share anything you'd like people to know and learn about, whether it's fiction, a story or a fact"
             ></textarea> */}
-                <form  >
+            <form  >
                 <div class="tc pa4 black-80" style={{display: 'grid'}}>
                     <div class="measure">
                         <label for="name" class="f6 b db mb2"> Upload media <span class="normal black-60"></span></label>
                         <input id="name" type= "file" class=" " aria-describedby="name-desc"/>
                         <div class="ph3 mt4">
-                            <a class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black" onClick={handleTheImageUpload} href="#0">Share!</a>
+                            <a class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black" onClick={handleTheImageUpload} href="#0">Share Media!</a>
                         </div>
                         <small id="name-desc" class="f6 black-60 db mb2"> Share the moment's most funny content.</small>
                     </div>
                     
                 </div>
-                </form>
+            </form>
                 
         </div>
         

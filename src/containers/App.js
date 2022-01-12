@@ -122,12 +122,12 @@ class  App extends Component {
     return fetch('https://api.Cloudinary.com/v1_1/vanessaproduct/raw/upload', options) //raw allows you toupload all media type
     .then(res => res.json())
     .then(res => console.log(res))
-    // .catch(err => console.log(err));
     .then(res => {
       this.setState({
         imageUrl: res.secure_url,
         imageAlt: `An image of ${res.original_filename}`
       })
+    .catch(err => console.log(err));
     })
 
     //addto box

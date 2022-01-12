@@ -128,7 +128,11 @@ class  App extends Component {
         imageAlt: `An image of ${res.original_filename}`
       })
     .catch(err => console.log(err));
+    console.log("url", this.state.imageUrl)
+    console.log("alturl", this.state.imageAlt)
     })
+
+    
 
     //addto box
   }

@@ -129,7 +129,7 @@ class  App extends Component {
       })
       console.log("url", this.state.imageUrl)
       console.log("alturl", this.state.imageAlt)
-    .catch(err => console.log(err));
+    // .catch(err => console.log(err));
    
     })
 

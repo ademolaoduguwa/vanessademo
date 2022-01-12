@@ -14,7 +14,7 @@ const Wisdombox = ({dropWisdom}) => {
             ></textarea> */}
                 <form  >
                 <div class="tc pa4 black-80" style={{display: 'grid'}}>
-                    <label for="what will your friends learn from you today?" class="f6 b db mb2">Share the most funny thing you've learnt at the moment?<span class="normal black-60"></span></label>
+                    <label for="what will your friends learn from you today?" class="f6 b db mb2">Share the most funny thing you've discover at the moment?<span class="normal black-60"></span></label>
                     <textarea id="textareaok" name="comment" class="" aria-describedby="comment-desc"></textarea>
                     <div class="measure">
                         <small id="name-desc" class="f6 black-60 db mb2"> Share the moment's most funny content.</small>

@@ -124,7 +124,7 @@ class  App extends Component {
     .then(res => console.log(res))
     .then(res => {
       this.setState({
-        imageUrl: res.secure_url,
+        imageUrl: res.url,
         imageAlt: `An image of ${res.original_filename}`
       })
     .catch(err => console.log(err));

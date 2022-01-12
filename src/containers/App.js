@@ -119,7 +119,7 @@ class  App extends Component {
     };
 
   // replace cloudname with your Cloudinary cloud_name
-    return fetch('https://api.Cloudinary.com/v1_1/:vanessaproduct/image/upload', options)
+    return fetch('https://api.Cloudinary.com/v1_1/vanessaproduct/image/upload', options)
     .then(res => res.json())
     .then(res => console.log(res))
     .catch(err => console.log(err));

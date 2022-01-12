@@ -17,14 +17,14 @@ const Wisdombox = ({dropWisdom}) => {
                     <label for="what will your friends learn from you today?" class="f6 b db mb2">What have you learnt today?<span class="normal black-60"></span></label>
                     <textarea id="textareaok" name="comment" class="" aria-describedby="comment-desc"></textarea>
                     <div class="measure">
-                        <label for="name" class="f6 b db mb2"> Media <span class="normal black-60">Add media file</span></label>
-                        <input id="name" type= "file" class="input-reset ba b--black-20 pa2 mb2 db w-100" aria-describedby="name-desc"/>
-                        <small id="name-desc" class="f6 black-60 db mb2"> Share the most funny contents you've seen today.</small>
+                        <label for="name" class="f6 b db mb2"> Upload media file <span class="normal black-60"></span></label>
+                        <input id="name" type= "file" class=" " aria-describedby="name-desc"/>
+                        <small id="name-desc" class="f6 black-60 db mb2"> Share the most funny content you've seen today.</small>
                     </div>
-                    <small id="comment-desc" class="f6 black-60">Share anything you'd like people to know about, whether it's fiction, a story or a fact <a href="0#" class="link underline black-80 hover-blue">link to more info.</a></small>
+                    
                 </div>
                 </form>
-                  
+                
             <div class="ph3 mt4">
               <a class="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black" onClick={dropWisdom} href="#0">Share!</a>
            </div>

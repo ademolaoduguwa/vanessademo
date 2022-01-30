@@ -2,7 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/App';
+import Applicationroute from './containers/Applicationroute';
+import 'antd/dist/antd.css';
+// import App from './containers/App';
 // import reportWebVitals from './reportWebVitals';
 // import Card from './Card';
 // import CardList from './CardList';
@@ -11,7 +13,7 @@ import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
-   <App/> 
+    <Applicationroute/> 
   </React.StrictMode>,
   document.getElementById('mago')
 );

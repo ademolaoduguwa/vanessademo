@@ -15,8 +15,96 @@ import Signup from '../components/Signup';
 import Signinnav from '../components/Signinnav';
 import Profilecard from '../components/Profilecard';
 import Wisdomboxmedia from '../components/Wisdomboxmedia';
+import {BrowserRouter as Router, Route, Link, Routes, useParams} from 'react-router-dom';
+
 
 // import Scrollhor from '../components/Scrollhor';
+
+export const Home = () => (
+
+  <h1>Home</h1>
+ 
+  
+
+);
+
+export const About = () => (
+<div>
+<h1>About</h1>
+
+<ul>
+<li>
+  <Link to="/">AboutHome</Link>
+</li>
+<li>
+  <Link to="/about">AboutAbout</Link>
+</li>
+<li>
+  <Link to="/reports">AboutReports</Link>
+</li>
+</ul>
+<Routes>
+<Route exact path="/" element={<Home/>}/>
+<Route exact path="/about" element={<About/>}/>
+<Route exact path="/reports" element={<Reports/>}/>
+<Route path="/fide/:fideId" element={<Fide/>} render={props => (<Fide {...props} author={{name:"Ademola", age:"300"}} />)} />
+</Routes>
+
+</div>
+  
+ 
+  
+
+);
+
+export const Reports = () => (
+
+  <h1>Welcome to reports</h1>
+ 
+  
+
+);
+
+export const Fide = (props) => {
+
+  const { fideId } = useParams()
+  return (
+
+  <div>
+    <h2>Kabo to fide</h2>
+    <h1>fide comb  {fideId} {this.props.author} </h1>
+  </div>
+  
+  );
+   
+}
+
+export const Sweetlink = (props) => {
+
+  const {name, age} = this.props.location.state
+
+  return (
+
+  <div>
+    <h2>Sweeetlink</h2>
+    <h1>{name} </h1>
+
+    <p>{age}</p>
+  </div>
+  
+  );
+   
+}
+ 
+
+
+
+  
+
+   
+  
+
+
 
 
 
@@ -46,6 +134,7 @@ class  App extends Component {
     
   }
 
+  
  
  componentDidMount () { //fetch both user and rolls here from pydb using urls ; then update themon component will update
    fetch('https://jsonplaceholder.typicode.com/users')
@@ -102,10 +191,7 @@ class  App extends Component {
         
   }
 
-  // handleImageUpload = () => {
-  //   const { files } = document.querySelector('input[type="file"]')
-  //   console.log('Image file', files[0])
-  // }
+ 
 
   handleImageUpload = () => {
     const { files } = document.querySelector('input[type="file"]')
@@ -138,11 +224,8 @@ class  App extends Component {
 
     //addto box
   }
-  // componentWillUpdate(){
-  //   const val1 = this.state.rolld
-  //   const val2 = this.state.rolls
-  // }
-
+ 
+ 
  render (){
 
   
@@ -230,7 +313,7 @@ class  App extends Component {
 
             // console.log("first one look ok " + val1),
       // console.log("second one look ok" + val2),
-
+      
         
      
        <div className ='tc'>
@@ -238,6 +321,41 @@ class  App extends Component {
          console.log("second one " + this.state.rolls)} */}
           {navmessage}
          {usermessage}
+
+        <h1>Select your route</h1>
+        <Router>
+              <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/reports">Reports</Link>
+              </li>
+              <li>
+                <Link to="/fide/:fideId">Fides</Link>
+              </li>
+              <li>
+              <Link
+                  to={{
+                    pathname: "/sweetlink",
+                    search: "?sort=name",
+                    hash: "#the-hash",
+                    state: [{ name: "Ademola", age:"20", dob:89 }]
+                  }}
+              >SweetLink</Link>
+               </li> 
+            </ul>
+           <Routes>
+              <Route exact path="/" element={<Home/>}/>
+              <Route exact path="/about" element={<About/>}/>
+              <Route exact path="/reports" element={<Reports/>}/>
+              <Route exact path="/sweetlink" element={<Sweetlink/>}/>
+              <Route exact path="/fide/:fideId" element ={<Fide/>} render={props => (<Fide {...props} author="Ademola"/>)} />
+            </Routes>
+        </Router>
                   
         </div>
 
@@ -250,5 +368,8 @@ class  App extends Component {
   
 }
 
+
+
 }
 export default App;
+

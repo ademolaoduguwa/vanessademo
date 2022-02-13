@@ -155,7 +155,7 @@ const Playspace = (props) => {
 
           
     const { 
-                id,
+                // id,
                 // firstname,
                 // lastname,
                 // username,
@@ -219,11 +219,13 @@ const Playspace = (props) => {
             console.log("dataddddd", data.secure_url);
             document.querySelector('input[type="file"]').value="";
 
+            
+
           //save data into post DB
           // const formData = new FormData();
           let sendPostData ={
-            id:id,
-            user:state[3],
+            id:state[2].id,
+            user:state[2],
             title:"Not too long ago coming here",
             posturl:data.secure_url,
             posttyp:filetype,
@@ -292,61 +294,42 @@ const Playspace = (props) => {
     
         //addto box
       }
+     
+      let dropsection
 
-    
-
-    // const [form] = Form.useForm();
-
-    // let navigate = useNavigate();
-    
-//     const handleSubmit = (values, message) => {
-
-//         console.log('Received values of form: ', values);
-//         console.log('Received message of form: ', message);
-
-         
-//     setLoading(true);
-//     axios.post('https://testpython3.pythonanywhere.com/register/', 
-//     values
-//     )
-//     .then(res => {
-//     setLoading(false);
-//     console.log('Looks successful heres data: ', values);    
-    
-//     navigate('/Signup2');
-//     })
-//     .catch(error => {
-//     setLoading(false);
-//     console.log('Entering error ', error);
-    
-//     })
-// }
-
-
-
-// const onClickSiginin = () =>{
-//     navigate('/Signup2');
-// }
+      if (state[0].id===state[2].id) {
+        dropsection =
+        <span>
+        <Row justify="center" align="middle" gutter={[16, 16]}>
+                <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most leezy content.</small>
+        </Row>
+          
+        <Row justify="center" align="middle" >
+                  
+        <input className="f7 grow no-underline br-pill ba ph3 pv2 mb2 dib black" width="250px" id="name" type= "file" aria-describedby="name-desc"/>
+        </Row>
+        <Row justify="center" align="middle" style={{ margin: 10}}>
+        <Button type="primary" loading={loading} onClick={handleImageUpload} >Drop your Drip</Button>
+        
+        </Row>
+        
+        
+        </span>
+        
+        }
+        else{
+          dropsection = <span><Row justify="center" align="middle" style={{ margin: 10}}>
+            {`Enjoy ${state[0].firstname}'s drips`}
+            </Row>
+            </span>
+        }
 
  
-//   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-//   const onWebsiteChange = (value) => {
-//     if (!value) {
-//       setAutoCompleteResult([]);
-//     } else {
-//       setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-//     }
-//   };
-
-//   const websiteOptions = autoCompleteResult.map((website) => ({
-//     label: website,
-//     value: website,
-//   }));
 
 console.log('FEED_DATA onload', FEED_DATA);
 console.log('drips onload', drips);
 console.log('state onload', state[0] );
+
   return (
 
     
@@ -388,17 +371,9 @@ console.log('state onload', state[0] );
         <div className="tc"  ><span font="bold">     </span>. </div>
            
         </Row>
-       <Row justify="center" align="middle" gutter={[16, 16]}>
-                <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most leezy content.</small>
-        </Row>
-              
-        <Row justify="center" align="middle" >
-            <input className="f7 grow no-underline br-pill ba ph3 pv2 mb2 dib black" id="name" type= "file" aria-describedby="name-desc"/>
-        </Row>
-        <Row justify="center" align="middle">
-            <Button type="primary" loading={loading} onClick={handleImageUpload} >Drop your Drip</Button>
-      
-       </Row>
+       
+         {  dropsection        }
+        
        <Row justify="center" align="middle" gutter={[20, { xs: 8, sm: 24, md: 24, lg: 32 }]} >
           <Col xs ={24} sm= {12} md={8} lg={8} >
           <Scroll>

@@ -379,7 +379,7 @@ console.log('state onload', state[0] );
             <Col className="gutter-row" xs={13} sm={13} md={6} lg={6} xl={6} >
                 {/* <div><h2 className="f6 mb2 tc">Earning Power </h2></div>
                 <div className="tc"><span font="bold">$(USD)</span>10,000</div> */}
-                <div><h2 className="f6 mb2 tc">Wickedness Level </h2></div>
+                <div><h2 className="f6 mb2 tc">Influence </h2></div>
                 <div className="tc"><span font="bold">10,000</span> L</div>
             </Col>
             <Col className="gutter-row" xs={0} sm={0} md={6} lg={6} xl={6} ><h1 className="f3 mb2">.</h1></Col>
@@ -397,14 +397,7 @@ console.log('state onload', state[0] );
         </Row>
         <Row justify="center" align="middle">
             <Button type="primary" loading={loading} onClick={handleImageUpload} >Drop your Drip</Button>
-        </Row>
-        <Row justify="center" align="middle" gutter={[16, 16]}>
-            <Row justify="center" align="middle" gutter={[60, 48]}>
-                <Col span={4} >Space</Col>
-                <Col span={4} >Space</Col>
-                <Col span={4} >Space</Col>
-                <Col span={4} >Space</Col>
-         </Row>
+      
        </Row>
        <Row justify="center" align="middle" gutter={[20, { xs: 8, sm: 24, md: 24, lg: 32 }]} >
           <Col xs ={24} sm= {12} md={8} lg={8} >

@@ -55,7 +55,7 @@ src={carddata.posturl}
 
 return (
   <Card
-  style={{ width: 300 }}
+  style={{ width: 260 }}
   cover={
     contenttype
   }

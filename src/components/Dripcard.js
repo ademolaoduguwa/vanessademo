@@ -69,9 +69,12 @@ return (
   ]}
 >
   <Meta
-    avatar={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span><Avatar src={carddata.user.tempprofileimgurl}/></span></Link>}
-    title={<span><Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{carddata.user.firstname}</span></Link><span> <Button type="primary">Circle</Button></span></span>}
-    description={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></Link>}
+    avatar={<a onClick={loadProfile} ><span><Avatar src={carddata.user.tempprofileimgurl}/></span></a>}
+    title={<span><a onClick={loadProfile} ><span>{carddata.user.firstname}</span></a><span> <Button type="primary">Circle</Button></span></span>}
+    description={<a  onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></a>}
+    // avatar={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span><Avatar src={carddata.user.tempprofileimgurl}/></span></Link>}
+    // title={<span><Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{carddata.user.firstname}</span></Link><span> <Button type="primary">Circle</Button></span></span>}
+    // description={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></Link>}
     
   />       
 </Card>

@@ -306,7 +306,7 @@ const Playspace = (props) => {
           
         <Row justify="center" align="middle" >
                   
-        <input className="f7 grow no-underline br-pill ba ph3 pv2 mb2 dib black" width="250px" id="name" type= "file" aria-describedby="name-desc"/>
+        <input className="f7 grow no-underline br-pill ba ph3 pv2 mb2 dib black" width="150px" id="name" type= "file" aria-describedby="name-desc"/>
         </Row>
         <Row justify="center" align="middle" style={{ margin: 10}}>
         <Button type="primary" loading={loading} onClick={handleImageUpload} >Drop your Drip</Button>

@@ -1,7 +1,7 @@
 import { Card, Button } from 'antd';
 import Avatar from 'antd/lib/avatar/avatar';
 import React, { useState } from 'react';
-import {useNavigate, Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 
@@ -69,9 +69,9 @@ return (
   ]}
 >
   <Meta
-    avatar={<a onClick={loadProfile} ><span><Avatar src={carddata.user.tempprofileimgurl}/></span></a>}
-    title={<span><a onClick={loadProfile} ><span>{carddata.user.firstname}</span></a><span> <Button type="primary">Circle</Button></span></span>}
-    description={<a  onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></a>}
+    avatar={<span onClick={loadProfile} ><span><Avatar src={carddata.user.tempprofileimgurl}/></span></span>}
+    title={<span><span color ="blue" cursor= "pointer" onClick={loadProfile}>{carddata.user.firstname}</span> <span> <Button type="primary">Circle</Button></span></span>}
+    description={<span color ="blue" onClick={loadProfile} ><span>{keydata}</span></span>}
     // avatar={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span><Avatar src={carddata.user.tempprofileimgurl}/></span></Link>}
     // title={<span><Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{carddata.user.firstname}</span></Link><span> <Button type="primary">Circle</Button></span></span>}
     // description={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></Link>}

@@ -223,7 +223,7 @@ const Playspace = (props) => {
           // const formData = new FormData();
           let sendPostData ={
             id:id,
-            user:state[0],
+            user:state[3],
             title:"Not too long ago coming here",
             posturl:data.secure_url,
             posttyp:filetype,

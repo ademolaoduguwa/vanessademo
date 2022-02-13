@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Vanessa",
+  "name": "Vanessa",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,27 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "vanessalogook72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "vanessalogook96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "vanessalogook128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "vanessalogook192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "vanessalogook512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

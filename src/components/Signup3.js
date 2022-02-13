@@ -5,7 +5,7 @@ import { Layout} from 'antd';
 // import { Layout, Menu, Breadcrumb } from 'antd';
 import 'antd/dist/antd.css';
 import { Row, Col } from 'antd';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import axios from 'axios';
 import { LockOutlined, UserOutlined } from "@ant-design/icons"; 
 import { Image } from 'antd';
@@ -42,7 +42,7 @@ const Signup2 = () => {
             setLoading(false);
             // message.success('User Added Successfully!');
             console.log('SSTATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: ', res);
-            navigate('/Playspace', {state: [res.data, res.data, res.data]});
+            navigate('/Playspace', {state: res.data});
             })
             .catch(error => {
             setLoading(false);
@@ -297,29 +297,28 @@ const Signup2 = () => {
 </Breadcrumb> */}
 <div className=" " style={{ padding: 24, marginBottom: 50, minHeight: 700 }}>
     <Row >
-    <Col justify ="center" xs={24} sm={24} md={16} lg={16} xl={16}>
+    <Col justify ="center" xs={24} sm={24} md={18} lg={18} xl={18}>
     <Row >
         <Col  >
             
                 <Image
                     width={100}
                     height={100}
-                    src="https://www.linkpicture.com/q/vanessalogo2.png"
+                    src="./vanessalogobo1.png"
                 />
         </Col>
     </Row>
     <Row> 
-         <Col xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 50, marginTop: 30 }}>
+         <Col xs={24} sm={24} md={13} lg={13} xl={13}  style={{ padding: '0px', marginBottom: 50, marginTop: 30 }}>
          <h2>Vanessa is an atmopshere for you to be 'high' ;)</h2>
-         <span>...your cool friends are already getting 'high' on vanessa. </span>
+                                <h5>...your friends and lots of people are already getting 'high' on vanessa. </h5>
                
         </Col> 
-        
     </Row>   
      
     <Row>
-        <Col xs={24} sm={24} md={14} lg={14} xl={14}>
-        <h5>Come in Sweetheart.</h5>
+        <Col xs={24} sm={24} md={20} lg={20} xl={20}>
+        <h6>Come in sweetheart.</h6>
                         <Form
                             name="normal_login"
                             className="login-form"
@@ -365,11 +364,13 @@ const Signup2 = () => {
                         </Form.Item> */}
 
                         <Form.Item>
-                            <Button type="primary" loading={loading} htmlType="submit" className="login-form-button">
+                            <Button type="primary" htmlType="submit" className="login-form-button">
                             Get high on Vanessa
                             </Button>
+                           {/* <a href="0#" loading={loading} onClick = {onClickRegister}> or Register Now !</a>  */}
                            <Link
-                                
+                                loading={loading}
+
                                 onClick = {onClickRegister}
 
                                 to={{
@@ -378,7 +379,7 @@ const Signup2 = () => {
                                 hash: "",
                                 state: [{ name: "Ademola", age:"20", dob:89 }]
                                 }}
-                            > or, join us sweetheart !</Link>
+                            > or Join us Sweetheart !</Link>
                         </Form.Item>
                     </Form>
 
@@ -397,5 +398,5 @@ const Signup2 = () => {
    
   );
 }
-export default Signup2;
+export default RegistrationForm;
 

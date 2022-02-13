@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {useNavigate, Link} from 'react-router-dom';
 import { Layout} from 'antd';
+import { Image } from 'antd';
 import {
   Form,
   Input,
@@ -72,18 +73,18 @@ const formItemLayout = {
     },
   },
 };
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
+// const tailFormItemLayout = {
+//   wrapperCol: {
+//     xs: {
+//       span: 24,
+//       offset: 0,
+//     },
+//     sm: {
+//       span: 16,
+//       offset: 8,
+//     },
+//   },
+// };
 
 // const config = {
 //     rules: [
@@ -122,9 +123,9 @@ const RegistrationForm = () => {
     )
     .then(res => {
     setLoading(false);
-    console.log('Looks successful heres data: ', values);    
+    console.log('Looks successful heres data: ', res);    
     
-    navigate('/Signup2');
+    navigate('/Playspace', {state: [res.data, res.data, res.data]});
     })
     .catch(error => {
     setLoading(false);
@@ -138,53 +139,64 @@ const onClickSiginin = () =>{
 }
 
  
-//   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+return (
 
-//   const onWebsiteChange = (value) => {
-//     if (!value) {
-//       setAutoCompleteResult([]);
-//     } else {
-//       setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-//     }
-//   };
+<Layout>
+{/* <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+<div className="logo" />
+<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+    <Menu.Item key="1">nav 1</Menu.Item>
+    <Menu.Item key="2">nav 2</Menu.Item>
+    <Menu.Item key="3">nav 3</Menu.Item>
+</Menu>
+</Header> */}
+<Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+{/* <Breadcrumb style={{ margin: '16px 0' }}>
+    <Breadcrumb.Item>Home</Breadcrumb.Item>
+    <Breadcrumb.Item>List</Breadcrumb.Item>
+    <Breadcrumb.Item>App</Breadcrumb.Item>
+</Breadcrumb> */}
+<div className=" "  style={{ padding: 24, marginBottom: 50, minHeight: 700 }}>
+    <Row  justify="center" >
+    <Col  xs={24} sm={24} md={16} lg={16} xl={16} >
+    <Row justify="center">
+        <Col>
+    <Row  >
+        <Col  >
+            
+                <Image
+                    width={100}
+                    height={100}
+                    src="https://www.linkpicture.com/q/vanessalogo2.png"
+                />
+        </Col>
+    </Row>
+    <Row > 
+         <Col  xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 50, marginTop: 30 }}>
+                <h2>Vanessa is an atmopshere for you to be 'high' ;)</h2>
+                <span>...it's an invite only place where your friends are already coming to get 'high' on fun, money, knowledge... Join, to find out more, yourself! </span>
+               
+        </Col> 
+        <Col  xs={24} sm={24} md={13} lg={13} xl={13}  style={{ padding: '0px', marginBottom: 1, marginTop: 1 }}>
+        <h5>First, let's get some info about you to put you on this train ;) <Link
+                                
 
-//   const websiteOptions = autoCompleteResult.map((website) => ({
-//     label: website,
-//     value: website,
-//   }));
-  return (
-    <Layout>
-    {/* <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-    <div className="logo" />
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-    </Menu>
-    </Header> */}
-    <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-    {/* <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
-    </Breadcrumb> */}
-    <div className=" " style={{ padding: 24, minHeight: 380 }}>
-        <Row gutter={[48, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
-            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Col gutter={[16, 48]}>
-                    {/* <Image
-                        width={200}
-                        height={200}
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                    /> */}
-                </Col>
-                <Col gutter={[16, 48]}>
-                    <h2>Vanessa is a fun atmosphere for you to learn and earn from anyone</h2>
-                </Col>
-         
-            </Col>
-            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Form
+                                onClick = {onClickSiginin}
+
+                                to={{
+                                pathname: "/signup2",
+                                search: "",
+                                hash: "",
+                                state: [{ name: "Ademola", age:"20", dob:89 }]
+                                }}
+                            > or, sweetheart, just come in if you've already joined !</Link></h5>
+        </Col> 
+    </Row>   
+     
+    <Row>
+        <Col xs={24} sm={24} md={20} lg={20} xl={20}>
+        
+        <Form
                     {...formItemLayout}
                     form={form}
                     name="register"
@@ -195,9 +207,9 @@ const onClickSiginin = () =>{
                     }}
                     scrollToFirstError
                     >
-                    <Form.Item
+                    <Form.Item 
                         name="email"
-                        label="E-mail"
+                        // label="E-mail"
                         rules={[
                         {
                             type: 'email',
@@ -209,12 +221,11 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Input />
+                        <Input placeholder="Your e-mail"/>
                     </Form.Item>
 
                     <Form.Item
                         name="password"
-                        label="Password"
                         rules={[
                         {
                             required: true,
@@ -223,12 +234,12 @@ const onClickSiginin = () =>{
                         ]}
                         hasFeedback
                     >
-                        <Input.Password />
+                        <Input.Password placeholder="Password"/>
                     </Form.Item>
 
                     <Form.Item
                         name="confirm"
-                        label="Confirm Password"
+                        // label="Confirm Password"
                         dependencies={['password']}
                         hasFeedback
                         rules={[
@@ -247,11 +258,11 @@ const onClickSiginin = () =>{
                         }),
                         ]}
                     >
-                        <Input.Password />
+                        <Input.Password placeholder="Confirm Password" />
                     </Form.Item>
                     <Form.Item
                         name="username"
-                        label="Username"
+                        // label="Username"
                         // tooltip="What do you want others to call you?"
                         rules={[
                         {
@@ -261,12 +272,12 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Input />
+                        <Input placeholder="Choose a Nickname!"/>
                     </Form.Item>
 
                     <Form.Item
                         name="firstname"
-                        label="Firstname"
+                        // label="Firstname"
                         // tooltip="What do you want others to call you?"
                         rules={[
                         {
@@ -276,11 +287,11 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Input />
+                        <Input placeholder="Firstname, what do people call you ?"/>
                     </Form.Item>
                     <Form.Item
-                        name="lasttname"
-                        label="Lastname"
+                        name="lastname"
+                        // label="Lastname"
                         // tooltip="What do you want others to call you?"
                         rules={[
                         {
@@ -290,12 +301,12 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Input />
+                        <Input placeholder="And your Surname is ?"/>
                     </Form.Item>
 
                     <Form.Item
                         name="country"
-                        label="Country"
+                        // label="Country"
                         rules={[
                         {
                             // type: 'array',
@@ -304,12 +315,12 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Input />
+                        <Input placeholder="What Country are you from?"/>
                     </Form.Item>
 
                     <Form.Item
                         name="mobilenumber"
-                        label="Phone Number"
+                        // label="Phone Number"
                         rules={[
                         {
                             required: true,
@@ -322,6 +333,7 @@ const onClickSiginin = () =>{
                         style={{
                             width: '100%',
                         }}
+                        placeholder="Your mobile number for us to send you a code"
                         />
                     </Form.Item>
                     {/* <Form.Item 
@@ -333,7 +345,7 @@ const onClickSiginin = () =>{
 
                     <Form.Item
                         name="gender"
-                        label="Gender"
+                        // label="Gender"
                         rules={[
                         {
                             required: true,
@@ -341,19 +353,19 @@ const onClickSiginin = () =>{
                         },
                         ]}
                     >
-                        <Select placeholder="select your gender">
+                        <Select placeholder="Select your gender">
                         <Option value="male">Male</Option>
                         <Option value="female">Female</Option>
                         <Option value="other">Other</Option>
                         </Select>
                     </Form.Item>
-                    <Form.Item {...tailFormItemLayout}>
+                    <Form.Item >
                         <Button type="primary" loading={loading} htmlType="submit">
-                        SignUp
+                        Join your friends on Vanessa
                         </Button>
                         {/* <a href="#" loading={loading} onClick = {onClickSiginin}> or SignIn !</a>  */}
                         <Link
-                                loading={loading}
+                                
 
                                 onClick = {onClickSiginin}
 
@@ -363,15 +375,21 @@ const onClickSiginin = () =>{
                                 hash: "",
                                 state: [{ name: "Ademola", age:"20", dob:89 }]
                                 }}
-                            > or SignIn !</Link>
+                            >   or, Sweetheart, come in if you've already joined !</Link>
                     </Form.Item>
-                </Form>      
+                </Form>   
 
-            </Col>
-        </Row>
-    </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}></Footer>
+            
+    </Col>
+    </Row>
+    </Col>
+    </Row>
+    </Col>
+    </Row>
+</div>
+
+</Content>
+<Footer style={{ textAlign: 'center' }}></Footer>
 </Layout>
 
    

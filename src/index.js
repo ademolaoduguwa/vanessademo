@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -9,6 +8,8 @@ import 'antd/dist/antd.css';
 // import Card from './Card';
 // import CardList from './CardList';
 import 'tachyons';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 
 
 ReactDOM.render(
@@ -17,6 +18,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('mago')
 );
+serviceWorkerRegistration.register();
+
 
 // ReactDOM.render(
 //   <React.StrictMode>

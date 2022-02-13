@@ -17,6 +17,8 @@ const Profilecard = ({state, formerstate, loggedinuser}) => { //Your profile or 
     }
     
     const addToCircle = () => {
+        setCorrectbutton(<Button onClick={removeFromCircle} type="danger">Release</Button>);
+        setDone(1);
         console.log('Enter AddToCircle with data', values); 
         axios.post('https://testpython3.pythonanywhere.com/circle/', 
         values
@@ -66,6 +68,8 @@ const Profilecard = ({state, formerstate, loggedinuser}) => { //Your profile or 
     }
 
     const removeFromCircle = () => {
+        setCorrectbutton(<Button onClick={addToCircle} type="primary">Circle</Button>);
+        setDone(4);
         console.log('Enter RemoveFromCircle with data ', values); 
         axios.delete('https://testpython3.pythonanywhere.com/removecircle/', 
         {data:values}

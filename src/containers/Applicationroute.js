@@ -14,9 +14,9 @@ const Applicationroute = () => {
     <Router>
         <Routes>
             <Route exact path="/" element={<Signup2/>}/>
-            <Route exact path="/signup2" element={<Signup2/>}/>
-            <Route exact path="/register" element={<Register/>}/>
-            <Route exact path="/playspace" element={<Playspace/>}/>
+            <Route exact path="/Signup2" element={<Signup2/>}/>
+            <Route exact path="/Register" element={<Register/>}/>
+            <Route exact path="/Playspace" element={<Playspace/>}/>
             <Route exact path="/myplacespace" element={<Cuspace/>}/>
             {/* <Route exact path="/fide/:fideId" element ={<Fide/>} render={props => (<Fide {...props} author="Ademola"/>)} />  */}
         </Routes>

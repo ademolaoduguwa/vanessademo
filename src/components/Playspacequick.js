@@ -9,9 +9,9 @@ import { Layout} from 'antd';
 // import { Spin } from 'antd';
 // import Wisdomboxmedia from '../components/Wisdomboxmedia';
 // import { LeftCircleOutlined, UploadOutlined } from '@ant-design/icons';
-import Driplist from '../components/Driplist';
-import Scroll from '../components/Scroll';
-import Profilecard2 from '../components/Profilecard2';
+import Driplist from './Driplist';
+import Scroll from './Scroll';
+import Profilecard2 from './Profilecard2';
 
 import { 
  
@@ -357,14 +357,14 @@ console.log('state onload', state[0] );
         <Row justify="center" align="middle" gutter={[16, 48]}>
             <Col className="gutter-row" xs={0} sm={0} md={6} lg={6} xl={6} ><h1 className="f3 mb2">.</h1></Col>
             <Col className="gutter-row" xs={11} sm={11} md={6} lg={6} xl={6} >
-                <div><h2 className="f6 mb2 tc">Coin</h2></div>
-                <div className="tc">0 (USD)</div>
+                <div><h2 className="f6 mb2 tc">Social Good</h2></div>
+                <div className="tc">10 SG</div>
             </Col>
             <Col className="gutter-row" xs={13} sm={13} md={6} lg={6} xl={6} >
                 {/* <div><h2 className="f6 mb2 tc">Earning Power </h2></div>
                 <div className="tc"><span font="bold">$(USD)</span>10,000</div> */}
                 <div><h2 className="f6 mb2 tc">Influence </h2></div>
-                <div className="tc"><span font="bold">0</span> L</div>
+                <div className="tc"><span font="bold">10,000</span> L</div>
             </Col>
             <Col className="gutter-row" xs={0} sm={0} md={6} lg={6} xl={6} ><h1 className="f3 mb2">.</h1></Col>
        </Row>

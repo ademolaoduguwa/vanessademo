@@ -173,7 +173,7 @@ return (
     <Breadcrumb.Item>List</Breadcrumb.Item>
     <Breadcrumb.Item>App</Breadcrumb.Item>
 </Breadcrumb> */}
-<div className=" "  style={{ padding: 24, marginBottom:20, minHeight: 500 }}>
+<div className=" "  style={{ padding: 24, marginBottom:20, minHeight: 800 }}>
     <Row  justify="center" >
     <Col  xs={24} sm={24} md={16} lg={16} xl={16} >
     <Row justify="center">
@@ -189,7 +189,7 @@ return (
         </Col>
     </Row>
     <Row > 
-         <Col  xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 20, marginTop: 60 }}>
+         <Col  xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 50, marginTop: 60 }}>
                 <h2>Vanessa is an atmopshere for you to be 'high' ;)</h2>
                 <span>...it's an invite only place where your friends are already coming to get 'high' on fun, money, knowledge... ! </span>
                
@@ -406,7 +406,7 @@ return (
 </div>
 
 </Content>
-<Footer style={{ textAlign: 'center' }}></Footer>
+<Footer style={{ textAlign: 'center' }}><h5>tweet enquiries to @AdemolaOduguwa</h5></Footer>
 </Layout>
 
    

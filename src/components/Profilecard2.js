@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { 
+    // useEffect,
+    //  useState
+     } from 'react';
 import { Button } from 'antd';
-import axios from 'axios';
+// import axios from 'axios';
 import { Image } from 'antd';
 // import {
 //     // useNavigate, Link, 
@@ -20,9 +23,9 @@ const Profilecard = (props) => { //Your profile or another's profile
     let correctbutton;
     let done ;
 
-    const checkIfCircle = () =>{
-        done =1;
-    };
+    // const checkIfCircle = () =>{
+    //     done =1;
+    // };
 
 
     if (props.state[0].id) {

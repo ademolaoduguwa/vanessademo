@@ -307,7 +307,7 @@ const Signup2 = () => {
     <Breadcrumb.Item>List</Breadcrumb.Item>
     <Breadcrumb.Item>App</Breadcrumb.Item>
 </Breadcrumb> */}
-<div className=" " style={{ padding: 24, marginBottom: 20, minHeight: 500 }}>
+<div className=" " style={{ padding: 24, marginBottom: 20, minHeight: 800 }}>
     <Row >
     <Col justify ="center" xs={24} sm={24} md={16} lg={16} xl={16}>
     <Row >
@@ -403,7 +403,7 @@ const Signup2 = () => {
 </div>
 
 </Content>
-<Footer style={{ textAlign: 'center' }}></Footer>
+<Footer style={{ textAlign: 'center' }}><h5>tweet enquiries to @AdemolaOduguwa</h5></Footer>
 </Layout>
 
    

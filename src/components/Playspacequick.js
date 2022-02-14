@@ -387,7 +387,7 @@ console.log('state onload', state[0] );
     </div>        
     
     </Content>
-    <Footer style={{ textAlign: 'center' }}></Footer>
+    <Footer style={{ textAlign: 'center' }}><h5>tweet enquiries to @AdemolaOduguwa</h5></Footer>
 </Layout>
 
    

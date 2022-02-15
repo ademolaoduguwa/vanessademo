@@ -42,8 +42,8 @@ const Signup2 = () => {
             {
 
             
-                'password':values['mobilenumber'],
-                'username':values['mobilenumber'],
+                'password':values['username'],
+                'username':values['username'],
                 
         
                 
@@ -349,7 +349,7 @@ const Signup2 = () => {
                             },
                             ]}
                         >
-                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Come in with mobile number" />
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Come in with your Mobile No" />
                         </Form.Item>
                         {/* <Form.Item
                             name="password"
@@ -390,7 +390,7 @@ const Signup2 = () => {
                                 hash: "",
                                 state: [{ name: "Ademola", age:"20", dob:89 }]
                                 }}
-                            > or, join us sweetheart !</Link>
+                            > or, join us sweetheart, if you haven't !</Link>
                         </Form.Item>
                     </Form>
 

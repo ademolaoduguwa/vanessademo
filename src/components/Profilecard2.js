@@ -77,7 +77,8 @@ const Profilecard = (props) => { //Your profile or another's profile
                         className="br-100 h4 w4 dib ba b--black-05 pa2" alt="cool" title={props.state[0].title}/>
                     {/* <img   /> */}
                     <p><a href="#0" title="Phosset is your Photo Asset">Change Phosset</a></p>
-                    <h3 className="f6 mb2">{`${props.state[0].firstname} ${props.state[0].lastname}`}</h3>
+                    <h3 className="f6 mb2">{`${props.state[0].firstname}`}</h3>
+                    {/* <h3 className="f6 mb2">{`${props.state[0].firstname} ${props.state[0].lastname}`}</h3> */}
                     {/* <h3 class="f6 fw4 gray mt0"><span> {correctbutton}</span></h3> */}
                     {/* <h3 className="f6 fw4 gray mt0"><span> {props.state[0].id}</span></h3> */}
                     <span>{correctbutton}</span>

@@ -127,7 +127,7 @@ const RegistrationForm = () => {
         'password':values['mobilenumber'],
         'confirm':values['mobilenumber'],
         'username':values['mobilenumber'],
-        'firstname':values['mobilenumber'],
+        'firstname':values['firstname'],
         'lastname':values['mobilenumber'],
         'country':values['mobilenumber'],
         'mobilenumber':values['mobilenumber'],
@@ -352,6 +352,20 @@ return (
                         }}
                         placeholder="Join with mobile number"
                         />
+                    </Form.Item>
+                    <Form.Item
+                        name="firstname"
+                        // label="Firstname"
+                        // tooltip="What do you want others to call you?"
+                        rules={[
+                        {
+                            required: true,
+                            message: 'Please input your Firstname!',
+                            whitespace: true,
+                        },
+                        ]}
+                    >
+                        <Input placeholder="What's your firstname ?"/>
                     </Form.Item>
                     {/* <Form.Item 
                         name="date" 

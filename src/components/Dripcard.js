@@ -9,7 +9,9 @@ const { Meta } = Card;
 
 
 
-const Dripcard = ({keydata, carddata, useinfo, mainuser}) => {
+const Dripcard = ({
+  // keydata,
+   carddata, useinfo, mainuser}) => {
 
 // console.log('keydata is ', keydata);
 
@@ -70,8 +72,8 @@ return (
 >
   <Meta
     avatar={<span onClick={loadProfile} ><span><Avatar src={carddata.user.tempprofileimgurl}/></span></span>}
-    title={<span><span color ="blue" cursor= "pointer" onClick={loadProfile}>{carddata.user.firstname}</span> <span> <Button type="primary">Circle</Button></span></span>}
-    description={<span color ="blue" onClick={loadProfile} ><span>{keydata}</span></span>}
+    title={<span><span color ="blue" cursor= "pointer" onClick={loadProfile}>{carddata.user.firstname}</span> <span> </span></span>}
+    description={<span color ="blue" onClick={loadProfile} ><span><Button type="primary">Circle</Button> {'..'}</span></span>}
     // avatar={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span><Avatar src={carddata.user.tempprofileimgurl}/></span></Link>}
     // title={<span><Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{carddata.user.firstname}</span></Link><span> <Button type="primary">Circle</Button></span></span>}
     // description={<Link   onClick={loadProfile} to={{ pathname: " ", search: "", hash: "", state: [{ name: "Ademola"}]}}><span>{keydata}</span></Link>}

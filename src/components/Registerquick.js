@@ -215,12 +215,12 @@ return (
     <Row > 
          <Col  xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 50, marginTop: 60 }}>
                 <h2>Vanessa is an atmopshere for you to be 'high' ;)</h2>
-                <span>it's an invite only place where your friends are already coming to get 'high' on ...</span>
+                <span>it's an invite only place where your friends are already coming to get 'high' on fun, money, knowledge...</span>
                 {/* on fun, money, knowledge... ! */}
                
         </Col> 
         <Col  xs={24} sm={24} md={13} lg={13} xl={13}  style={{ padding: '0px', marginBottom: 1, marginTop: 1 }}>
-        <h5>...join now to find out, you're already missing out ! <Link
+        <h5>...join now to find out more, you're already missing out ! <Link
                                 
 
                                 onClick = {onClickSiginin}

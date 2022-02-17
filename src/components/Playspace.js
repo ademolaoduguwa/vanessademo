@@ -369,7 +369,7 @@ console.log('state onload', state[0] );
             <Col className="gutter-row" xs={0} sm={0} md={6} lg={6} xl={6} ><h1 className="f3 mb2">.</h1></Col>
        </Row>
        <Row justify="center" align="middle" gutter={[16, 16]}>
-        <div className="tc"  ><span font="bold">     </span>. </div>
+        <div className="tc"  ><span font="bold">     </span></div>
            
         </Row>
        

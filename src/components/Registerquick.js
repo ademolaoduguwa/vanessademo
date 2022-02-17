@@ -113,6 +113,24 @@ const RegistrationForm = () => {
     console.log('Received values of form: ', values);
     console.log('Received message of form: ',values['mobilenumber']);
 
+    let country ='';
+    axios.get('https://geolocation-db.com/jsonp/', 
+       
+    )
+    .then(res => {
+    setLoading(false);
+    console.log('location data: ', res);    
+    
+    country =res.country_name;
+    console.log('Country data: ', res.country_name);  
+    })
+    .catch(error => {
+    setLoading(false);
+    console.log('Entering error ', error);
+    
+    })
+}
+
          
     // const newvalues = {
     //     ...values,
@@ -129,7 +147,7 @@ const RegistrationForm = () => {
         'username':values['mobilenumber'],
         'firstname':values['firstname'],
         'lastname':values['mobilenumber'],
-        'country':values['mobilenumber'],
+        'country':country,
         'mobilenumber':values['mobilenumber'],
         'gender':'.'
         
@@ -191,11 +209,12 @@ return (
     <Row > 
          <Col  xs={24} sm={24} md={14} lg={14} xl={14}  style={{ padding: '0px', marginBottom: 50, marginTop: 60 }}>
                 <h2>Vanessa is an atmopshere for you to be 'high' ;)</h2>
-                <span>...it's an invite only place where your friends are already coming to get 'high' on fun, money, knowledge... ! </span>
+                <span>it's an invite only place where your friends are already coming to get 'high' on ...</span>
+                {/* on fun, money, knowledge... ! */}
                
         </Col> 
         <Col  xs={24} sm={24} md={13} lg={13} xl={13}  style={{ padding: '0px', marginBottom: 1, marginTop: 1 }}>
-        <h5>Join, to find out more, yourself! <Link
+        <h5>...join now to find out, you're already missing out ! <Link
                                 
 
                                 onClick = {onClickSiginin}
@@ -206,7 +225,7 @@ return (
                                 hash: "",
                                 state: [{ name: "Ademola", age:"20", dob:89 }]
                                 }}
-                            > or, sweetheart, come in if you've joined !</Link></h5>
+                            > </Link></h5>
         </Col> 
     </Row>   
      
@@ -350,7 +369,7 @@ return (
                         style={{
                             width: '100%',
                         }}
-                        placeholder="Join with mobile number"
+                        placeholder="Mobile number or Email"
                         />
                     </Form.Item>
                     <Form.Item
@@ -406,7 +425,7 @@ return (
                                 hash: "",
                                 state: [{ name: "Ademola", age:"20", dob:89 }]
                                 }}
-                            >   or,  come in baby if you've already joined !</Link>
+                            >   Come in baby if you've already joined !</Link>
                     </Form.Item>
                 </Form>   
 

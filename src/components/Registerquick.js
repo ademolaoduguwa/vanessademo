@@ -97,7 +97,7 @@ const formItemLayout = {
 //   };
 
 
-
+let country ='';
 
 
 const RegistrationForm = () => {
@@ -105,6 +105,7 @@ const RegistrationForm = () => {
 
   let navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    
 
   const handleSubmit = (values, message) => {
 
@@ -113,29 +114,33 @@ const RegistrationForm = () => {
     console.log('Received values of form: ', values);
     console.log('Received message of form: ',values['mobilenumber']);
 
-    let country ='';
-    axios.get('https://geolocation-db.com/jsonp/', 
+    
+
+    axios.get('https://geolocation-db.com/json/', 
        
     )
     .then(res => {
     setLoading(false);
     console.log('location data: ', res);    
     
-    country =res.country_name;
-    console.log('Country data: ', res.country_name);  
+    country =res.data.country_name;
+    console.log('Country data: ', res.data.country_name); 
+    console.log('Country data to string is ', `'${country}'`); 
     })
     .catch(error => {
     setLoading(false);
     console.log('Entering error ', error);
     
     })
-}
+
 
          
     // const newvalues = {
     //     ...values,
     //     'date-picker': values['date-picker'].format('DD-MM-YYYY')
     // }
+
+    values['country']=`${country}`
 
     setLoading(true);
     axios.post('https://testpython3.pythonanywhere.com/register/', 
@@ -147,7 +152,7 @@ const RegistrationForm = () => {
         'username':values['mobilenumber'],
         'firstname':values['firstname'],
         'lastname':values['mobilenumber'],
-        'country':country,
+        'country':values['country'],
         'mobilenumber':values['mobilenumber'],
         'gender':'.'
         
@@ -159,6 +164,7 @@ const RegistrationForm = () => {
     .then(res => {
     setLoading(false);
     console.log('Looks successful heres data: ', res);    
+    console.log('Country data to string in second is ', `'${country}'`); 
     
     navigate('/playspace', {state: [res.data, res.data, res.data]});
     })

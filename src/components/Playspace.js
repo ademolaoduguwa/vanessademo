@@ -115,10 +115,12 @@ let FEED_DATA = [];
 
 window.scrollBy(0,0);
 
+
 const Playspace = (props) => {
     
 
     window.scrollBy(0,0);
+    
 
     let navigate = useNavigate();
     const [loading, setLoading] = useState(false);

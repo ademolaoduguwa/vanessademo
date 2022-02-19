@@ -73,7 +73,7 @@ const Profilecard = (props) => { //Your profile or another's profile
                     
                     // width={100}
                     // height={100}
-                    src={props.state[0].tempprofileimgurl}
+                    src={`https://robohash.org/${props.state[0].id}/?set=set5`}
                         className="br-100 h4 w4 dib ba b--black-05 pa2" alt="cool" title={props.state[0].title}/>
                     {/* <img   /> */}
                     <p><a href="#0" title="Phosset is your Photo Asset">Change Phosset</a></p>

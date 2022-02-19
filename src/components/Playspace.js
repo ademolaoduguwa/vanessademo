@@ -113,8 +113,13 @@ let FEED_DATA = [];
 
 //localstorage in browser a storage that doesnt get deleted
 
+window.scrollBy(0,0);
+
 const Playspace = (props) => {
     
+
+    window.scrollBy(0,0);
+
     let navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [drips, setDrips] = useState(FEED_DATA);

@@ -297,6 +297,9 @@ const Playspace = (props) => {
      
       let dropsection
 
+      console.log("state[0].id===state[0].id", state[0].id);
+      console.log("state[2].id===state[2].id", state[2].id);
+
       if (state[0].id===state[2].id) {
         dropsection =
         <span>
@@ -373,7 +376,7 @@ console.log('state onload', state[0] );
            
         </Row>
        
-         {  dropsection        }
+         {  dropsection  }
         
        <Row justify="center" align="middle" gutter={[20, { xs: 8, sm: 24, md: 24, lg: 32 }]} >
           <Col xs ={24} sm= {12} md={8} lg={8} >

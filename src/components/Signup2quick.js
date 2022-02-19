@@ -34,7 +34,8 @@ const Signup2 = () => {
     const handleSubmit = (values, message) => {
 
             
-            console.log('Received values of form: ', values);
+            console.log('Received values of form: ', values['username']);
+            
             console.log('Received message of form: ', message);
 
             setLoading(true);
@@ -345,11 +346,11 @@ const Signup2 = () => {
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input your Surname to Come In!',
+                                message: 'Please input the Email you registered with to Come In!',
                             },
                             ]}
                         >
-                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Login with Surname" />
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Login with your Email" />
                         </Form.Item>
                         {/* <Form.Item
                             name="password"

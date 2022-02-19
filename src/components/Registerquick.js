@@ -112,7 +112,7 @@ const RegistrationForm = () => {
      
 
     console.log('Received values of form: ', values);
-    console.log('Received message of form: ',values['mobilenumber']);
+    console.log('Received message of form: ', message);
 
     
 
@@ -126,27 +126,14 @@ const RegistrationForm = () => {
     country =res.data.country_name;
     console.log('Country data: ', res.data.country_name); 
     console.log('Country data to string is ', `'${country}'`); 
-    })
-    .catch(error => {
-    setLoading(false);
-    console.log('Entering error ', error);
-    
-    })
 
-
-         
-    // const newvalues = {
-    //     ...values,
-    //     'date-picker': values['date-picker'].format('DD-MM-YYYY')
-    // }
-
-    values['country']=`${country}`
+    values['country']=`${country}`;
 
     setLoading(true);
     axios.post('https://testpython3.pythonanywhere.com/register/', 
     {
 
-        'email':'.',
+        'email':values['mobilenumber'],
         'password':values['mobilenumber'],
         'confirm':values['mobilenumber'],
         'username':values['mobilenumber'],
@@ -173,6 +160,22 @@ const RegistrationForm = () => {
     console.log('Entering error ', error);
     
     })
+
+    })
+    .catch(error => {
+    setLoading(false);
+    console.log('Entering error ', error);
+    
+    })
+
+
+         
+    // const newvalues = {
+    //     ...values,
+    //     'date-picker': values['date-picker'].format('DD-MM-YYYY')
+    // }
+
+  
 }
 
 const onClickSiginin = () =>{
@@ -366,7 +369,7 @@ return (
                         rules={[
                         {
                             required: true,
-                            message: 'Please input your firstname!',
+                            message: 'Please input your email!',
                         },
                         ]}
                     >
@@ -375,7 +378,7 @@ return (
                         style={{
                             width: '100%',
                         }}
-                        placeholder="What's your Surname"/>
+                        placeholder="What's your Email"/>
                         
                     </Form.Item>
                     <Form.Item

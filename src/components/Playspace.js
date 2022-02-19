@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import {
   // useNavigate, Link, 
@@ -113,7 +114,8 @@ let FEED_DATA = [];
 //localstorage in browser a storage that doesnt get deleted
 
 const Playspace = (props) => {
-
+    
+    let navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [drips, setDrips] = useState(FEED_DATA);
     const {state} = useLocation(); 
@@ -186,7 +188,12 @@ const Playspace = (props) => {
     // const {state} = useNavigate();
    
     
+    const backToProfile = () =>{
 
+      
+      navigate('/playspace', {state: [state[2], state[1], state[2]]});
+
+    }
     //Handle Post
     const handleImageUpload = () => {
         
@@ -294,11 +301,14 @@ const Playspace = (props) => {
     
         //addto box
       }
+
+      console.log("state[0].id===state[0].id", state[0].id);
+      console.log("state[2].id===state[2].id", state[2].id);
      
       let dropsection
 
       if (state[0].id===state[2].id){
-        <span>
+        dropsection = <span>
         <Row justify="center" align="middle" style={{ margin: 5}}>
                 <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most funny memes</small>
         </Row>
@@ -319,6 +329,9 @@ const Playspace = (props) => {
         else {
           dropsection = <span><Row justify="center" align="middle" style={{ margin: 10}}>
             {`Enjoy ${state[0].firstname}'s drips`}
+            </Row>
+            <Row justify="center" align="middle" style={{ margin: 10}}>
+            <Button loading={loading} onClick={backToProfile} >Back to My Profile</Button>
             </Row>
             </span>
         }

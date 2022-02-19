@@ -29,7 +29,7 @@ import {
 } from 'antd';
 
 const { 
-    // Header, 
+    Header, 
     Content, 
     Footer} = Layout;
 // const { Option } = Select;
@@ -352,21 +352,20 @@ console.log('state onload', state[0] );
 return (
     
     <Layout>
+      
    
-    {/* <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-    <div className="logo" />
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-    </Menu>
-    </Header> */}
+    { <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+    {window.scrollBy(0,0)}
+     </Header> }
     <Content className="site-layout" style={{ padding: '0 10px', marginTop: 10 }}>
     {/* <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Home</Breadcrumb.Item>
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item>
     </Breadcrumb> */}
+    
+    {window.scrollBy(0,0)}
+
     <div className=" " style={{ padding: 10, minHeight: 380 }}>
         <Row gutter={[20, { xs: 8, sm: 24, md: 24, lg: 32 }]}>
            <Profilecard2 state = {state} /> 

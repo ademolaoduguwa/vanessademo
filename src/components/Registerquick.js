@@ -375,7 +375,7 @@ return (
                         style={{
                             width: '100%',
                         }}
-                        placeholder="Mobile number or Email"
+                        placeholder="What's your Surname"/>
                         />
                     </Form.Item>
                     <Form.Item
@@ -390,7 +390,7 @@ return (
                         },
                         ]}
                     >
-                        <Input placeholder="What's your firstname ?"/>
+                        <Input placeholder="What's your Firstname ?"/>
                     </Form.Item>
                     {/* <Form.Item 
                         name="date" 

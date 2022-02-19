@@ -345,7 +345,7 @@ const Signup2 = () => {
                             rules={[
                             {
                                 required: true,
-                                message: 'Please input your Mobile Number to Come In!',
+                                message: 'Please input your Surname to Come In!',
                             },
                             ]}
                         >

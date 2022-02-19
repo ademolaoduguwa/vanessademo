@@ -297,7 +297,7 @@ const Playspace = (props) => {
      
       let dropsection
 
-      if (state[0].id=
+      if (state[0].id===state[2].id){
         <span>
         <Row justify="center" align="middle" style={{ margin: 5}}>
                 <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most funny content.</small>
@@ -316,7 +316,7 @@ const Playspace = (props) => {
         </span>
         
         }
-        else{
+        else {
           dropsection = <span><Row justify="center" align="middle" style={{ margin: 10}}>
             {`Enjoy ${state[0].firstname}'s drips`}
             </Row>

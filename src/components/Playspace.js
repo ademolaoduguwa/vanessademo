@@ -300,7 +300,7 @@ const Playspace = (props) => {
       if (state[0].id===state[2].id){
         <span>
         <Row justify="center" align="middle" style={{ margin: 5}}>
-                <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most funny content.</small>
+                <small id="name-desc" className="f6 black-60 db mb2"> Drip is your moment's most funny memes.</small>
         </Row>
           
         <Row justify="center" align="middle" >

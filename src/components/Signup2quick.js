@@ -349,7 +349,7 @@ const Signup2 = () => {
                             },
                             ]}
                         >
-                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Surname" />
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Login with Surname" />
                         </Form.Item>
                         {/* <Form.Item
                             name="password"

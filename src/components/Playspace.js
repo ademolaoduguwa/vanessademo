@@ -329,7 +329,6 @@ console.log('FEED_DATA onload', FEED_DATA);
 console.log('drips onload', drips);
 console.log('state onload', state[0] );
 
-  return (
 
     
     <Layout>
